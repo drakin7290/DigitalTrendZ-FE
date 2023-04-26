@@ -65,10 +65,8 @@ export default function MainLayout({ children, title = '', currentPage = '', dat
 
       <div className={`${styles['body']}`}>
         <Header currentPage={currentPage} />
-        <div className={`${styles['section']}`}>
           {children}
           {/* {cloneElement(children, { isDarkmode: isDarkmode })} */}
-        </div>
         <Footer />
         <ScrollToTop />
       </div>

@@ -21,4 +21,4 @@ export const PAGE = {
   ABOUT: 1,
 };
 
-export const nameWeb = 'Name web';
+export const nameWeb = 'Digital TrendZ Club  |  AGU';
