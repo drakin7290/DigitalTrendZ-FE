@@ -17,7 +17,9 @@ module.exports = {
       'black-blur': 'rgba(23,32,46,0.5)',
       'primary-blue':'#1364FB',
       'primary-orange':'#FBBC4B',
+      'light-blue':'#DCE4F3',
       'light-orange':'#f7d392',
+      'transparent':'transparent'
     },
     extend: {
       backgroundColor: {

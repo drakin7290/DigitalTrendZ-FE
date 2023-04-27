@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@700;900&display=swap');
+
+.form-container {
+    position: absolute;
+    top: 150px;
+    right: 200px;
+    padding: 2em;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.intro-text {
+    font-size: 2rem;
+    font-family: 'Chivo Mono', monospace;
+}

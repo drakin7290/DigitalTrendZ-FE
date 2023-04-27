@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 const SvgDropdown = ({ title, titleId, ...props }) => (
   <svg
     width="20px"
@@ -11,7 +11,13 @@ const SvgDropdown = ({ title, titleId, ...props }) => (
     {...props}
   >
     {title ? <title id={titleId}>{title}</title> : null}
-    <path d="m4 9 8 8 8-8" stroke={'currentColor'} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="m4 9 8 8 8-8"
+      stroke={"currentColor"}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 export default SvgDropdown;

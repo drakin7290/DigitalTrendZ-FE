@@ -3,6 +3,7 @@ import styles from "./styles.module.scss"
 import bg from "../../public/imgs/backgound.png"
 import Button from "~/components/base/Button";
 import ImageSlider from "~/components/common/ImageSlider";
+import TheBlob from "~/components/common/TheBlob";
 
 
 const slides = [
@@ -26,10 +27,10 @@ const slides = [
 function HomeContainer() {
   return (
   <div className={styles['main']}>
-    <section className={styles['hero-section']} style={{backgroundImage:`url(${bg.src})`}}>
+    <section className={styles['hero-section']} >
     <div className={styles['hero-section__containner']}>
       <div className=" flex flex-col">
-        <p className={styles['heading']}>CLB.DigitalTrendZ</p>
+        <p className={styles['heading']}>DigitalTrendZ<br></br>Club-AGU</p>
         <p className={styles['text']}>Bla bla bla bla mcm ndcnid uh cdcuh udh scjs njns njnj njn st ushu hushi</p>
         <Button to={'#'} className={styles['button']}>Explore
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -37,7 +38,7 @@ function HomeContainer() {
                 </svg>
         </Button>
       </div>
-      <div className="grid items-center"><Image src='/imgs/hero_img.png'  width={350} height={350}/></div>
+      <div className="relative"><TheBlob /><Image src='/imgs/hero_img.png'  width={350} height={350}/></div>
     </div>
     </section>
     <section className={styles['explore']}>

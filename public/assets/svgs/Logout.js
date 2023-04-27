@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 const SvgLogout = ({ title, titleId, ...props }) => (
   <svg
     width="20px"

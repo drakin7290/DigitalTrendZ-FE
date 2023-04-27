@@ -1,17 +1,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import useScrollDirection from '~/hooks/useScrollDirection';
 
 export default function Header() {
   const [display, setDisplay ] = useState(false);
+  const direction = useScrollDirection();
 
 const handleToggle = () => {
         setDisplay(!display);
 }
+const transparent = direction == "top" ? "bg-transparent" : "bg-gray shadow-md opacity-95";
   return (
   <header>
-    <div className="w-screen shadow-md py-3 px-1.5 fixed top-0 bg-gray z-30">
-        <nav className='flex justify-between mx-auto w-4/5 items-center'>
+    <div className={`w-screen py-3 px-1.5 fixed top-0 z-30 ${transparent}`}>
+        <nav className='flex justify-between mx-auto w-4/5 items-center op'>
             <Link href='/'><Image src='/imgs/logo.png' width={45} height={45} alt='company logo'></Image></Link>
             <button onClick={handleToggle} className='sm:hidden'><Image src={display ? '/imgs/icons/close.svg' : '/imgs/icons/menu.svg'} width={25} height={25} alt='toggle'></Image></button>
             
