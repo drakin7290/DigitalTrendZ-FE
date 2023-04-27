@@ -1,7 +1,7 @@
 @import '~/public/styles/base.scss';
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-
+/*     HERO SECTION    */
 .hero-section {
   width: 100%;
   min-height: 100vh;
@@ -36,32 +36,50 @@
 }
 
 .button {
+  width: 100px;
+  font-size: 2rem;
+  padding: 0.5em 1.5em;
   margin-top: 20px;
 }
 
-@media (max-width: 756px) {
+@media (max-width: 1000px) {
   .hero-section__containner {
     position: relative;
-    top: 10px;
+    top: 35px;
     flex-direction: column;
     max-width: 300px;
     gap: 20px;
   }
   .heading {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
+  }
+  .text {
+    font-size: 1rem;
   }
   .button {
-    margin-left: auto;
-    margin-right: auto;
+    width: 80px;
+    font-size: 1rem;
+    padding: 0.5em 1.5em;
   }
 }
 
+
+
+/*       EXPLORE SECTION            */
 .explore {
   background-color: $light-orange;
   min-height: 400px;
-
+  padding-top: 2em;
 }
 .explore__img {
-  margin-right: auto;
-  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+}
+@media (max-width: 750px) {
+  .explore__img {
+    font-size: 2rem;
+  }
 }
