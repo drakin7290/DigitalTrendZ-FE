@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styles from "./styles.module.scss"
-
-
+import Image from "next/image";
 
 
 
@@ -20,20 +19,9 @@ const ImageSlider = ({ slides }) => {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
-  const slideStyles = {
-    width: '100%',
-    height: '100%',
-    borderRadius:  '10px',
-    backgroundSize:  'cover',
-    backgroundPosition:  'center',
-}
-  const slideStylesWidthBackground = {
-    ...slideStyles,
-    backgroundImage: `url(${slides[currentIndex].url})`,
-  };
 
   return (
-    <div style={slideStyles}>
+    <div className={styles['sliderStyles']}>
       <div>
         <div onClick={goToPrevious} className={styles['leftArrowStyles']}>
           ❰
@@ -42,7 +30,17 @@ const ImageSlider = ({ slides }) => {
           ❱
         </div>
       </div>
-      <div style={slideStylesWidthBackground}></div>
+      <div className={styles['slideStylesWidthBackground']}>
+        <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className={styles['slide__img']}>
+            <div className="absolute bottom-0 flex flex-col">
+              <div className={styles['slide__date']}>
+                <Image src={'/imgs/icons/calendar.svg'} width={25} height={25}></Image>
+                {slides[currentIndex].date}
+              </div>
+              <div className={styles['slide__description']}>{slides[currentIndex].description}</div>
+            </div>
+        </div>
+      </div>
       <div className={styles['dotsContainerStyles']}>
         {slides.map((slide, slideIndex) => (
           <div

@@ -1,8 +1,8 @@
-
+@import '~/public/styles/base.scss';
 
 .slideStyles {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     border-radius:  10px ;
     background-size:  cover ;
     background-position:  center ;
@@ -13,7 +13,7 @@
     top:  50% ;
     right:  32px ;
     font-size:  45px ;
-    color:  #fff ;
+    color:  $color-white ;
     z-index: 1;
     cursor:  pointer ;
     transform:  translate(0,-50%) ;
@@ -25,19 +25,35 @@
     transform:  translate(0, -50%) ;
     left:  32px ;
     font-size:  45px ;
-    color:  #fff ;
+    color:  $color-white ;
     z-index: 1;
     cursor:  pointer ;
   };
   
-.sliderStyles   {
+.sliderStyles {
     position:  relative ;
-    height:  100% ;
+
   };
-  
+
+.slideStylesWidthBackground {
+  display: flex;
+  justify-content: center;
+} 
+
+.slide__img {
+  border-radius: 10px;
+  width: 90%;
+  height: 300px;
+  max-width: 950px;
+  background-size:  cover;
+  background-position:  center;
+}  
 .dotsContainerStyles   {
     display:  flex ;
     justify-content:  center ;
+    bottom: -30px;
+    position: absolute;
+    left: 43%;
   };
   
 .dotStyle   {
@@ -45,3 +61,22 @@
     cursor:  pointer ;
     font-size:  20px ;
 };
+
+.slide__date {
+  color: $color-white;
+}
+.slide__description {
+  color: $color-white;
+}
+
+@media (min-width: 700px) {
+  .slide__img {
+    height: 500px;
+  }
+  .rightArrowStyles {
+    color: $color-black;
+  }
+  .leftArrowStyles {
+    color: $color-black;
+  }
+}
