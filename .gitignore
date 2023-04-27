@@ -1,4 +1,8 @@
 node_modules
 # next.js
 /.next/
+<<<<<<< HEAD
 /out/
+=======
+/out/
+>>>>>>> f0ca930475f9b0f1ae83189f3519c71e9d2d6a7f

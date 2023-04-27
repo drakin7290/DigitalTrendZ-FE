@@ -1,0 +1,85 @@
+@import '~/public/styles/base.scss';
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/*     HERO SECTION    */
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-section__containner {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+
+.hero-img {
+  width: 200px;
+  height: 200px;
+}
+
+.heading {
+  color: $color-white;
+  font-family: 'VT323', monospace;
+  font-size: 8rem;
+}
+.text {
+  color: $color-white;
+  max-width: 20ch;
+  font-size: 2rem;
+}
+
+.button {
+  width: 100px;
+  font-size: 2rem;
+  padding: 0.5em 1.5em;
+  margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+  .hero-section__containner {
+    position: relative;
+    top: 35px;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 20px;
+  }
+  .heading {
+    font-size: 3.5rem;
+  }
+  .text {
+    font-size: 1rem;
+  }
+  .button {
+    width: 80px;
+    font-size: 1rem;
+    padding: 0.5em 1.5em;
+  }
+}
+
+
+
+/*       EXPLORE SECTION            */
+.explore {
+  background-color: $light-orange;
+  min-height: 400px;
+  padding-top: 2em;
+}
+.explore__img {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+}
+@media (max-width: 750px) {
+  .explore__img {
+    font-size: 2rem;
+  }
+}
