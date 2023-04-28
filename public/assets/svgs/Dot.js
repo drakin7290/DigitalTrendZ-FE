@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 const SvgDot = ({ title, titleId, ...props }) => (
   <svg
     width="20px"
@@ -11,7 +11,7 @@ const SvgDot = ({ title, titleId, ...props }) => (
     {...props}
   >
     {title ? <title id={titleId}>{title}</title> : null}
-    <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" fill={'currentColor'} />
+    <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" fill={"currentColor"} />
   </svg>
 );
 export default SvgDot;

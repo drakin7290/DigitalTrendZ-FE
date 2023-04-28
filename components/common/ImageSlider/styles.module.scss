@@ -1,0 +1,107 @@
+@import '~/public/styles/base.scss';
+
+.slideStyles {
+    width: 200px;
+    height: 200px;
+    border-radius:  10px ;
+    background-size:  cover ;
+    background-position:  center ;
+}
+  
+.rightArrowStyles {
+    position:  absolute ;
+    top:  50% ;
+    right:  32px ;
+    font-size:  45px ;
+    color:  $color-white ;
+    z-index: 1;
+    cursor:  pointer ;
+    transform:  translate(0,-50%) ;
+};
+
+.leftArrowStyles   {
+    position:  absolute ;
+    top:  50% ;
+    transform:  translate(0, -50%) ;
+    left:  32px ;
+    font-size:  45px ;
+    color:  $color-white ;
+    z-index: 1;
+    cursor:  pointer ;
+  };
+  
+.sliderStyles {
+    position:  relative ;
+
+  };
+
+.slideStylesWidthBackground {
+  display: flex;
+  justify-content: center;
+} 
+
+.slide__img {
+  border-radius: 10px;
+  width: 90%;
+  height: 300px;
+  max-width: 950px;
+  background-size:  cover;
+  background-position:  center;
+  position: relative;
+}  
+.dotsContainerStyles   {
+    display:  flex ;
+    justify-content:  center ;
+    bottom: -30px;
+    position: absolute;
+    left: 43%;
+  };
+  
+.dotStyle   {
+    margin:  0 3px ;
+    cursor:  pointer ;
+    font-size:  20px ;
+};
+
+.desc-container {
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  padding: 0.5em;
+  border-radius: 0 0  10px 10px;
+}
+
+.desc__date {
+  color: $color-white;
+  opacity: 70%;
+  font-size: 0.8rem;
+}
+.desc__heading {
+  font-size: 2rem;
+  color: $color-white;
+}
+
+@media (min-width: 700px) {
+  .slide__img {
+    height: 500px;
+  }
+  .rightArrowStyles {
+    color: $color-black;
+  }
+  .leftArrowStyles {
+    color: $color-black;
+  }
+  
+  .desc__date {
+    opacity: 70%;
+    font-size: 1.3rem;
+    color: $color-white;
+  }
+  .desc__heading {
+    font-size: 3rem;
+    color: $color-white;
+  }
+}

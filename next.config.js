@@ -31,6 +31,10 @@ module.exports = (phase) => {
       // includePaths: ['./styles'],
       prependData: `@import "./public/styles/base.scss";`,
     },
+    i18n: {
+      locales: ['vi','en'],
+      defaultLocale: 'vi',
+    },
     images: {
       domains: ['localhost', 'dev.be.domain', 'be.domain'],
     },

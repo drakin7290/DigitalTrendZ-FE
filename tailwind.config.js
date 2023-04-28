@@ -7,7 +7,19 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
+      'montserrat': ['Montserrat','Arial'],
+      'josefin_sans': ['"Josefin Sans"', 'sans-serif'],
       sans: 'var(--font-sans)',
+    },
+    colors: {
+      'gray':'#f2f3ff',
+      'white': '#ffffff',
+      'black-blur': 'rgba(23,32,46,0.5)',
+      'primary-blue':'#1364FB',
+      'primary-orange':'#FBBC4B',
+      'light-blue':'#DCE4F3',
+      'light-orange':'#f7d392',
+      'transparent':'transparent'
     },
     extend: {
       backgroundColor: {
@@ -32,8 +44,10 @@ module.exports = {
         'screen-xl': '1360px',
       },
       screens: {
-        xs: { min: '240px', max: '450px' },
-        sm: { min: '450px', max: '768px' },
+        //xs: { min: '240px', max: '450px' },
+        //sm: { min: '450px', max: '768px' },
+        'sm': '757px',
+        'ltsm': {'max' : '756px'}
       },
     },
   },
