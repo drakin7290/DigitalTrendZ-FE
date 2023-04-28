@@ -9,3 +9,14 @@
 .img {
     width: 300px;
 }
+
+@media (max-width: 900px) {
+    .img-container {
+        top: 0;
+        height: 300px;
+        width: 100vw;
+    }
+    .img {
+        width: 240px;
+    }
+}

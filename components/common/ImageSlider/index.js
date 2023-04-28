@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.scss"
 import Image from "next/image";
+import { Calendar } from "~/public/assets/svgs";
 
 
 
@@ -32,12 +33,12 @@ const ImageSlider = ({ slides }) => {
       </div>
       <div className={styles['slideStylesWidthBackground']}>
         <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className={styles['slide__img']}>
-            <div className="absolute bottom-0 flex flex-col">
-              <div className={styles['slide__date']}>
-                <Image src={'/imgs/icons/calendar.svg'} width={25} height={25}></Image>
+            <div className={styles['desc-container']}>
+              <div className={styles['desc__date']}>
+                <Calendar />
                 {slides[currentIndex].date}
               </div>
-              <div className={styles['slide__description']}>{slides[currentIndex].description}</div>
+              <div className={styles['desc__heading']}>{slides[currentIndex].description}</div>
             </div>
         </div>
       </div>

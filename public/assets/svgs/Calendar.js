@@ -1,8 +1,8 @@
 import * as React from "react";
 const SvgCalendar = ({ title, titleId, ...props }) => (
   <svg
-    width="20px"
-    height="20px"
+    width="35px"
+    height="35px"
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@ const SvgCalendar = ({ title, titleId, ...props }) => (
     {title ? <title id={titleId}>{title}</title> : null}
     <g
       clipPath="url(#calendar_svg__a)"
-      stroke={"currentColor"}
+      stroke={"#fff"}
       strokeWidth={1.5}
       strokeMiterlimit={10}
     >

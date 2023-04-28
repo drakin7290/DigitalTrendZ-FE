@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Blob1 } from "~/public/assets/svgs";
 import styles from "./styles.module.scss";
+import KUTE from "kute.js"
 
 export default function TheBlob() {
     useEffect(() => {

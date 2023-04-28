@@ -47,6 +47,7 @@
   max-width: 950px;
   background-size:  cover;
   background-position:  center;
+  position: relative;
 }  
 .dotsContainerStyles   {
     display:  flex ;
@@ -62,10 +63,24 @@
     font-size:  20px ;
 };
 
-.slide__date {
-  color: $color-white;
+.desc-container {
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  padding: 0.5em;
+  border-radius: 0 0  10px 10px;
 }
-.slide__description {
+
+.desc__date {
+  color: $color-white;
+  opacity: 70%;
+  font-size: 0.8rem;
+}
+.desc__heading {
+  font-size: 2rem;
   color: $color-white;
 }
 
@@ -78,5 +93,15 @@
   }
   .leftArrowStyles {
     color: $color-black;
+  }
+  
+  .desc__date {
+    opacity: 70%;
+    font-size: 1.3rem;
+    color: $color-white;
+  }
+  .desc__heading {
+    font-size: 3rem;
+    color: $color-white;
   }
 }
