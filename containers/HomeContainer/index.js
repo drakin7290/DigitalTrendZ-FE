@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./styles.module.scss"
-import bg from "../../public/imgs/backgound.png"
 import Button from "~/components/base/Button";
 import ImageSlider from "~/components/common/ImageSlider";
 import TheBlob from "~/components/common/TheBlob";
