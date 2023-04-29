@@ -37,7 +37,7 @@ function HomeContainer() {
                 </svg>
         </Button>
       </div>
-      <div className="relative"><TheBlob /><Image src='/imgs/hero_img.png'  width={350} height={350}/></div>
+      <div className="relative"><TheBlob /><Image src='/imgs/hero_img.png'  width={350} height={350} priority/></div>
     </div>
     </section>
     <section className={styles['explore']}>

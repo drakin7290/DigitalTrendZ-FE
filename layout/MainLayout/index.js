@@ -60,7 +60,6 @@ export default function MainLayout({ children, title = '', currentPage = '', dat
           })}`}
         />
         <meta name="og:type" content={!!meta_data ? 'article' : 'website'} />
-        <link href="/fonts/fonts.css" rel="stylesheet" type="text/css" />
       </Head>
 
       <div className={`${styles['body']}`}>
