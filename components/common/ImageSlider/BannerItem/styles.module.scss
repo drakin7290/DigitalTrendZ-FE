@@ -1,0 +1,45 @@
+.banner-item {
+    width: 600px;
+    height: 350px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border-radius: 0 0 10px 10px;
+}
+
+.desc-container {
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  padding: 0.5em;
+  border-radius: 0 0 10px 10px;
+}
+
+.desc__date {
+  color: $color-white;
+  opacity: 70%;
+  font-size: 1.2rem;
+}
+.desc__heading {
+  font-size: 1.9rem;
+  color: $color-white;
+}
+
+@media (max-width: 600px) {
+  .banner-item {
+    width: 300px;
+    height: 250px;
+  }
+  .desc__date {
+    opacity: 70%;
+    font-size: 1rem;
+    color: $color-white;
+  }
+  .desc__heading {
+    font-size: 1.7rem;
+    color: $color-white;
+  }
+}

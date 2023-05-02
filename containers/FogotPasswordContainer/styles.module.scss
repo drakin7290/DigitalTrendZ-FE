@@ -1,0 +1,32 @@
+.main {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+}
+
+.container {
+    max-width: 350px;
+    background-color: #fcf8f6;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0.7em auto;
+}
+.contact-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}

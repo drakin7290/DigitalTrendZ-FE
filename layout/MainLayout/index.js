@@ -10,9 +10,10 @@ import icon from '~/public/favicon.ico';
 import ScrollToTop from '~/components/common/ScrollToTop';
 import { nameWeb } from '~/core/contants';
 
+
 export default function MainLayout({ children, title = '', currentPage = '', data = null, meta_data = null }) {
   const titlePage = !!title ? `${nameWeb} - ` + title : nameWeb;
-
+ 
   return (
     <>
       {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDHNFW2Q5M" />

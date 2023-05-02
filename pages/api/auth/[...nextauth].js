@@ -1,6 +1,10 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
+import CredentialsProvider from "next-auth/providers/credentials";
+import fakeCheckUser from "./fakeCheckUser";
+import { TokenTwoTone } from "@mui/icons-material";
+
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -12,6 +16,18 @@ export const authOptions = {
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+    }),
+    CredentialsProvider({
+      name: "Credentials",
+      async authorize(credentials, req) {
+        const result = fakeCheckUser(credentials);
+      
+        if (result) {
+          return result;
+        } else {
+          return null
+        }
+      }
     })
     // ...add more providers here
   ],
@@ -20,16 +36,19 @@ export const authOptions = {
   },
   secret: process.env.NEXT_PUBLIC_SECRET,
   callbacks: {
-    async jwt({ token, account }) {
+    async jwt({ token, account, user}) {
       // Persist the OAuth access_token to the token right after signin
       if (account) {
-        token.accessToken = account.access_token
+        token.accessToken = account.access_token;
+        token.user = user;
       }
       return token
     },
     async session({ session, token, user }) {
       // Send properties to the client, like an access_token from a provider.
-      session.accessToken = token.accessToken
+      session.accessToken = token.accessToken;
+      session.user = token.user;
+
       return session
     }
   }

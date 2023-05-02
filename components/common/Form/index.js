@@ -3,15 +3,12 @@ import styles from "./styles.module.scss"
 import { TextField } from "@mui/material";
 import { Controller } from "react-hook-form";
 import { useState } from "react";
-import FormControl from "@mui/material";
-import InputLabel from "@mui/material";
-import Button from "@mui/material";
 import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 
 export default function Form() {
@@ -24,13 +21,25 @@ export default function Form() {
     }
   });
 
+  const router = useRouter();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show)
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
-  const onSubmit = (data) => console.log(JSON.stringify(data));
+async function onSubmit(data) {
+    const status = await signIn("credentials",{
+      redirect: false,
+      user_name: data.user_name,
+      password: data.password,
+      callbackUrl: "/",
+    });
+    if(status.ok) {
+        router.push(status.url);
+    }
+
+  }
 
   return (
     <div className={styles['form-container']}>
@@ -60,17 +69,55 @@ export default function Form() {
           name="password"
           control={control}
           render={({ field }) => 
-            <Input
+          <TextField
+            {...field}
+            label='Mật khẩu'
+            variant="standard"
+            type={showPassword ? "text" : "password"}
+            InputLabelProps={{
+              style: {
+                fontSize: "1.5rem",
+              }
+            }}
+            InputProps={{ 
+              style: {
+                fontSize: "1.5rem",
+              },
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+          />
+          }
+        />
+        <input type="submit" value="Let's go" className={styles['btn']} />
+      </form>
+      <a href={"/forgotpassword"} className={styles['forgot-pass']}>Quên mật khẩu?</a>
+    </div>
+  )
+}
+
+/*
+  <TextField
               {...field}
-              id="standard-adornment-password"
-              placeholder="Mật khẩu"
+              variant="standard" 
+              name="password"
+              label="Password"
               type={showPassword ? 'text' : 'password'}
+              id="password"
               inputProps={{
                 style: {
                   fontSize: "1.5rem",
                 },
-              }}
-              endAdornment={
+              endAdornment:(
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="toggle password visibility"
@@ -80,12 +127,6 @@ export default function Form() {
                     {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-              }
-            />}
-        />
-        <input type="submit" value="Let's go" className={styles['btn']} />
-      </form>
-      <a href={"/forgotpassword"} className={styles['forgot-pass']}>Quên mật khẩu</a>
-    </div>
-  )
-}
+              ),
+              }}
+            />} */

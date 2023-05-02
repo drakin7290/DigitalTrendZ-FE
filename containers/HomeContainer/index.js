@@ -5,23 +5,7 @@ import ImageSlider from "~/components/common/ImageSlider";
 import TheBlob from "~/components/common/TheBlob";
 
 
-const slides = [
-  {
-    url:'https://images.unsplash.com/photo-1681589436610-ee3b350e57d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-    description: 'csjci cij jcijc jicj jicjs jis sxdc',
-    date: '23/02/2004'
-  },
-  {
-    url:'https://images.unsplash.com/photo-1681651987346-a6db3ba3441f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80',
-    description: 'csjci cij jcijc jicj jicjs jis sxdc',
-    date: '10/03/2026'
-  },
-  {
-    url:'https://images.unsplash.com/photo-1682106446688-19a29ffb0b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 
-    description: 'cs mot cai chuyen gi do s jis sxdc',
-    date: '05/11/2023'
-  },
-]
+
 
 function HomeContainer() {
   return (
@@ -47,7 +31,7 @@ function HomeContainer() {
           <p>TIÊU ĐIỂM TUẦN</p>
         </div>
       </div>
-        <ImageSlider slides={slides} />
+        <ImageSlider />
     </section>
   </div>
   )
