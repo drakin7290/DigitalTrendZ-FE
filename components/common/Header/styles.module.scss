@@ -1,1 +1,28 @@
-@import '~/public/styles/base.scss';
+
+.popover {
+    display: flex;
+    flex-direction: column;
+    padding: 1.3em;
+}
+.popover__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3em;
+    font-size: 1.5rem;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+    font-size: 1.5rem;
+    padding: 0.4em;
+    background-color: $primary-blue;
+    color: $color-white;
+    border-radius: 10px;
+}
+
