@@ -16,9 +16,9 @@ export default function Footer() {
           ĐƠN VỊ TRỰC THUỘC
         </div>
         <div className={styles['logo']}>
-          <div className={styles['logo__item']}><Image src='/imgs/logo/agu_logo.png' width={36} height={36} /></div>
-          <div className={styles['logo__item']}><Image src='/imgs/logo/hsv_logo.png' width={36} height={36} /></div>
-          <div className={styles['logo__item']}><Image src='/imgs/logo.png' width={36} height={36} /></div>
+          <div className={styles['logo__item']}><Image src='/imgs/logo/agu_logo.png' width={36} height={36} alt="agu"/></div>
+          <div className={styles['logo__item']}><Image src='/imgs/logo/hsv_logo.png' width={36} height={36} alt="hsv"/></div>
+          <div className={styles['logo__item']}><Image src='/imgs/logo.png' width={36} height={36} alt="logo"/></div>
         </div>
       </div>
     </div>
