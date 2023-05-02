@@ -31,7 +31,7 @@ function HomeContainer() {
           <p>TIÊU ĐIỂM TUẦN</p>
         </div>
       </div>
-        {/*<ImageSlider />*/}
+        <ImageSlider />
     </section>
   </div>
   )

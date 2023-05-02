@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import Container from "~/components/base/Container";
 import BannerItem from "./BannerItem";
@@ -44,28 +45,23 @@ const ImageSlider = () => {
   };
 
   return (
-      <div className={styles['slider']}>
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          navigation={{
-            nextEl: '.' + styles['navigation-right'],
-            prevEl: '.' + styles['navigation-left'],
-          }}
-          // spaceBetween={device === 'extra-small' ? 20 : 40}
-          spaceBetween={0}
-          slidesPerView={1}
-          pagination={{ el: '.' + styles['swiper-pagination'], clickable: true }}
-        >
-          {slides?.map((item, index) => {
-            return (
-              <SwiperSlide>
-                <BannerItem image={item?.url} />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        <div className={`${styles['swiper-pagination']} swiper-pagination`}></div>
-      </div>
+    <div className={styles['container']}>
+    <div className={styles['slider']}>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      centeredSlides={true}
+    > 
+      {slides.map((item, index) => {
+        return (
+          <SwiperSlide>
+            <BannerItem data={item} />
+          </SwiperSlide>
+        )
+      })}
+    </Swiper>
+    </div>
+    </div>
   );
 };
 
@@ -105,3 +101,19 @@ export default ImageSlider;
 //     </div>
 //   </div>
 // );
+
+{/* <div className={styles['slider']}>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          pagination={{ el: '.' + styles['swiper-pagination'], clickable: true }}
+        >
+          {slides?.map((item, index) => {
+            return (
+              <SwiperSlide>
+                <BannerItem image={item?.url} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div> */}

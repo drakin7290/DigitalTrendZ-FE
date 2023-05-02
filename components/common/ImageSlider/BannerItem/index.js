@@ -1,11 +1,16 @@
-import Img from '~/components/base/Img';
-
 import styles from './styles.module.scss';
+import { Calendar } from "~/public/assets/svgs";
 
-export default function BannerItem({ image }) {
+export default function BannerItem({ data }) {
   return (
-    <div className={styles['banner-item']}>
-      <Img className={styles['image']} src={image} errorImage={'/imgs/demos/banner-1.png'} />
+    <div className={styles['banner-item']} style={{backgroundImage: `url(${data.url})`}}>
+      <div className={styles['desc-container']}>
+            <div className={styles['desc__date']}>
+              <Calendar />
+              {data.date}
+            </div>
+                <div className={styles['desc__heading']}>{data.description}</div>
+            </div>
     </div>
   );
 }
