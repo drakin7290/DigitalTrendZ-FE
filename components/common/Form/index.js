@@ -7,8 +7,9 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { signIn } from "next-auth/react";
+//import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import signIn from "~/pages/api/myAuth/signIn";
 
 
 export default function Form() {
@@ -28,18 +29,23 @@ export default function Form() {
     event.preventDefault();
   };
 
-async function onSubmit(data) {
-    const status = await signIn("credentials",{
-      redirect: false,
-      user_name: data.user_name,
-      password: data.password,
-      callbackUrl: "/",
-    });
-    if(status.ok) {
-        router.push(status.url);
-    }
+// async function onSubmit(data) {
+//     const status = await signIn("credentials",{
+//       redirect: false,
+//       user_name: data.user_name,
+//       password: data.password,
+//       callbackUrl: "/",
+//     });
+//     if(status.ok) {
+//         router.push(status.url);
+//     }
 
-  }
+//   }
+
+function onSubmit(data) {
+    signIn(data);
+    router.push("/");
+}
 
   return (
     <div className={styles['form-container']}>

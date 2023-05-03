@@ -1,19 +1,15 @@
 import HomeContainer from '~/containers/HomeContainer';
 import MainLayout from '~/layout/MainLayout';
-import { useSession } from 'next-auth/react';
+import getUser from './api/myAuth/getUser';
 import UserContainer from '~/containers/UserContainer';
 import LoadingContainer from '~/containers/LoadingContainer';
 
 export default function HomePage() {
-
-  const {data: session, status} = useSession();
-      
+      const {session} = getUser();
   
   return (
     <MainLayout>
-      {status === "loading" ?
-      <LoadingContainer />
-      : session ? 
+      { session ?
       <UserContainer />
       :
       <HomeContainer />

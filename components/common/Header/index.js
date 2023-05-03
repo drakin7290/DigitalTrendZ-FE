@@ -2,7 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import useScrollDirection from '~/hooks/useScrollDirection';
-import { useSession, signOut } from 'next-auth/react';
+import getUser from '~/pages/api/myAuth/getUser';
+import signOut from '~/pages/api/myAuth/signOut';
 import { Avatar } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import styles from "./styles.module.scss"
@@ -28,9 +29,8 @@ export default function Header() {
   const id = open ? 'simple-popover' : undefined;
 
   const direction = useScrollDirection();
-  const {data: session} = useSession();
+  const {name, image, session} = getUser();
 
-  const {name , image } = session ? session.user : {name: "", image: ""} ;
   
 const handleSignOut = () => {
   signOut();
@@ -64,7 +64,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
               horizontal: 'right',
             }}
           >
-            <ul className={styles['popover']}>
+            <div className={styles['popover']}>
               <Link href="/user/profile">
                 <div className={styles['popover__item']}>
                 <AccountCircleOutlinedIcon
@@ -87,7 +87,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
                 Đăng xuất
                 <LogoutIcon />
               </button>
-            </ul>
+            </div>
           </Popover>
           </>
             : 
