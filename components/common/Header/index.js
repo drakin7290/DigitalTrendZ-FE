@@ -40,7 +40,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
   return (
   <header>
     <div className={`w-screen py-3 px-1.5 fixed top-0 z-30 ${transparent}`}>
-        <nav className='flex justify-between mx-auto w-4/5 items-center op'>
+        <div className='flex justify-between mx-auto w-4/5 items-center op'>
             <Link href='/'><Image src='/imgs/logo.png' width={45} height={45} alt='logo' priority></Image></Link>
             {/*<button onClick={handleToggle} className='sm:hidden'><Image src={display ? '/imgs/icons/close.svg' : '/imgs/icons/menu.svg'} width={25} height={25} alt='toggle'></Image></button>*/}
             { session ?
@@ -93,7 +93,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
             : 
             <Link href='/login'><div className='rounded-3xl py-3 px-8 text-white bg-primary-blue font-medium cursor-pointer hover:shadow-md'>Đăng nhập</div></Link>
             }
-        </nav>
+        </div>
     </div>
         
   </header>

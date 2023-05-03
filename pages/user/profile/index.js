@@ -1,12 +1,10 @@
 import MainLayout from "~/layout/MainLayout";
-import styles from "./styles.module.scss"
+import ProfileContainer from "~/containers/ProfileContainer";
 
 export default function Profile() {
     return (
         <MainLayout>
-            <main className={styles['main']}>
-                
-            </main>
+            <ProfileContainer />
         </MainLayout>
     )
 }
