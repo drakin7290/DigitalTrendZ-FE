@@ -1,8 +1,6 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
-import CredentialsProvider from "next-auth/providers/credentials";
-import fakeCheckUser from "./fakeCheckUser";
 import { TokenTwoTone } from "@mui/icons-material";
 
 
@@ -17,18 +15,6 @@ export const authOptions = {
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET
     }),
-    CredentialsProvider({
-      name: "Credentials",
-      async authorize(credentials, req) {
-        const result = fakeCheckUser(credentials);
-      
-        if (result) {
-          return result;
-        } else {
-          return null
-        }
-      }
-    })
     // ...add more providers here
   ],
   pages: {

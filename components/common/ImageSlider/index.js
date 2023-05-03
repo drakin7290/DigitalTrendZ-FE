@@ -54,8 +54,8 @@ const ImageSlider = () => {
     > 
       {slides.map((item, index) => {
         return (
-          <SwiperSlide>
-            <BannerItem data={item} />
+          <SwiperSlide key={index}>
+            <BannerItem data={item}/>
           </SwiperSlide>
         )
       })}
