@@ -1,15 +1,15 @@
 import HomeContainer from '~/containers/HomeContainer';
 import MainLayout from '~/layout/MainLayout';
-import getUser from './api/myAuth/getUser';
+import getUser from '../utils/getUser';
 import UserContainer from '~/containers/UserContainer';
 import LoadingContainer from '~/containers/LoadingContainer';
+import { useEffect, useState } from 'react';
 
 export default function HomePage() {
-      const {session} = getUser();
-  
+  const { session } = getUser();
   return (
     <MainLayout>
-      { session ?
+      {session ? 
       <UserContainer />
       :
       <HomeContainer />

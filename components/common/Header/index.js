@@ -2,8 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import useScrollDirection from '~/hooks/useScrollDirection';
-import getUser from '~/pages/api/myAuth/getUser';
-import signOut from '~/pages/api/myAuth/signOut';
+import getUser from '~/utils/getUser';
+import signOut from '~/utils/signOut';
 import { Avatar } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import styles from "./styles.module.scss"

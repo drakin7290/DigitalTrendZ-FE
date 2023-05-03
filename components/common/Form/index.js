@@ -9,11 +9,12 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 //import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
-import signIn from "~/pages/api/myAuth/signIn";
+import signIn from "~/utils/signIn";
 
 
 export default function Form() {
   const [showPassword, setShowPassword] = useState(false);
+  const [authorize, setAuthorize] = useState(true);
 
   const { control, handleSubmit } = useForm({
     defaultValues: {
@@ -43,13 +44,23 @@ export default function Form() {
 //   }
 
 function onSubmit(data) {
-    signIn(data);
-    router.push("/");
+    const status = signIn(data);
+    if(status == true) {
+      setAuthorize(true);
+      router.push("/");
+    } else {
+      setAuthorize(false);
+    }
+    
 }
 
   return (
     <div className={styles['form-container']}>
       <h2 className={styles['intro-text']} >Đăng nhập</h2>
+      {
+        authorize ||
+        <p className={styles['error-text']}>⚠ Tên tài khoản hoặc mật khẩu sai ⚠</p>
+      }
       <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
         <Controller
           name="user_name"
