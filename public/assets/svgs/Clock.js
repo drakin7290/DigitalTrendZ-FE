@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 const SvgClock = ({ title, titleId, ...props }) => (
   <svg
     width="20px"
@@ -13,14 +13,14 @@ const SvgClock = ({ title, titleId, ...props }) => (
     {title ? <title id={titleId}>{title}</title> : null}
     <path
       d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"
-      stroke={'currentColor'}
+      stroke={"currentColor"}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="m15 16-2.414-2.414A2 2 0 0 1 12 12.172V6"
-      stroke={'currentColor'}
+      stroke={"currentColor"}
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"

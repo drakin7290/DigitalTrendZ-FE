@@ -12,11 +12,15 @@
     "svgr": "svgr --icon 20px --title-prop --svg-props role={`icon-default`} --replace-attr-values #1E1E1E={'currentColor'} -d public/assets/svgs -- public/imgs/icons"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@googlemaps/react-wrapper": "^1.1.31",
     "@hookform/resolvers": "^2.8.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.2",
     "@react-google-maps/api": "^2.10.2",
     "@reduxjs/toolkit": "^1.5.1",
     "@svgr/cli": "^6.5.1",
@@ -32,6 +36,7 @@
     "formik": "^2.2.9",
     "isomorphic-dompurify": "^0.19.0",
     "keen-slider": "^6.7.0",
+    "kute.js": "^2.2.4",
     "next": "12.1.4",
     "next-auth": "^4.10.3",
     "next-images": "^1.8.4",

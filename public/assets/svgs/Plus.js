@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 const SvgPlus = ({ title, titleId, ...props }) => (
   <svg
     width="20px"
@@ -11,7 +11,12 @@ const SvgPlus = ({ title, titleId, ...props }) => (
     {...props}
   >
     {title ? <title id={titleId}>{title}</title> : null}
-    <path d="M12 20v-8m0 0V4m0 8h8m-8 0H4" stroke={'currentColor'} strokeWidth={2} strokeLinecap="round" />
+    <path
+      d="M12 20v-8m0 0V4m0 8h8m-8 0H4"
+      stroke={"currentColor"}
+      strokeWidth={2}
+      strokeLinecap="round"
+    />
   </svg>
 );
 export default SvgPlus;

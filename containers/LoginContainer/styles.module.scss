@@ -1,0 +1,22 @@
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 100vh;
+    position: absolute;
+}
+.img {
+    width: 300px;
+}
+
+@media (max-width: 900px) {
+    .img-container {
+        top: 0;
+        height: 300px;
+        width: 100vw;
+    }
+    .img {
+        width: 220px;
+    }
+}
