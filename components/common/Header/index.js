@@ -11,10 +11,10 @@ import { useRouter } from 'next/router';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
+import isLogged from '~/utils/isLogged';
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
-
   const router = useRouter();
 
   const handleClick = (event) => {
@@ -29,25 +29,34 @@ export default function Header() {
   const id = open ? 'simple-popover' : undefined;
 
   const direction = useScrollDirection();
-  const {name, image, session} = getUser();
+  const data_user = getUser();
+  const logged = isLogged ();
 
   
 const handleSignOut = () => {
   signOut();
-  router.push("/")
+  window.location.reload ();
+  // mutate ({}, {
+  //   onSuccess (data) {
+  //     console.log(data)
+  //   }
+  // })
 }
 const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md";
   return (
   <header>
     <div className={`w-screen py-3 px-1.5 fixed top-0 z-30 ${transparent}`}>
         <div className='flex justify-between mx-auto w-4/5 items-center op'>
-            <Link href='/'><Image src='/imgs/logo.png' width={45} height={45} alt='logo' priority></Image></Link>
+            <Link href='/'>
+              <a><Image src='/imgs/logo.png' width={45} height={45} alt='logo' priority></Image></a>
+            </Link>
             {/*<button onClick={handleToggle} className='sm:hidden'><Image src={display ? '/imgs/icons/close.svg' : '/imgs/icons/menu.svg'} width={25} height={25} alt='toggle'></Image></button>*/}
-            { session ?
+            { logged ?
             <> 
               <Avatar
-              alt={name}
-              src={image}
+              alt={data_user.name}
+              src={data_user.avatar}
+              className={styles['avatar']}
               aria-describedby={id} variant="contained" onClick={handleClick}
             />
           <Popover

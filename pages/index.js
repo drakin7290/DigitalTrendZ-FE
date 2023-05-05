@@ -4,15 +4,16 @@ import getUser from '../utils/getUser';
 import UserContainer from '~/containers/UserContainer';
 import LoadingContainer from '~/containers/LoadingContainer';
 import { useEffect, useState } from 'react';
+import isLogged from '~/utils/isLogged';
 
 export default function HomePage() {
-  const { session } = getUser();
+  const logged = isLogged();
   return (
     <MainLayout>
-      {session ? 
-      <UserContainer />
-      :
-      <HomeContainer />
+      {logged ?
+        <UserContainer />
+        :
+        <HomeContainer />
       }
     </MainLayout>
   );
