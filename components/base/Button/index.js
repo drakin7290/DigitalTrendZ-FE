@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 export default function Button({
   className = '',
   children,
-  onClick = function () {},
+  onClick = function () { },
   style = {},
   styleMobile = {},
   upperCase = true,
@@ -17,6 +17,8 @@ export default function Button({
   responsive = true,
   disabled,
   outline = false,
+  usePrimaryStype = true,
+  type = 'button',
   ...props
 }) {
   let upperCaseClass = '';
@@ -35,7 +37,9 @@ export default function Button({
 
   return (
     <button
-      className={clsx(className, styles['btn-primary'], upperCaseClass, {
+      type={type}
+      className={clsx(className, upperCaseClass, {
+        [styles['btn-primary']]: usePrimaryStype,
         [styles['center']]: center,
         [styles['responsive']]: responsive,
         [styles['disabled']]: disabled,
