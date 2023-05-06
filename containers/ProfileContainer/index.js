@@ -5,11 +5,12 @@ import getUser from "~/utils/getUser"
 export default function ProfileContainer() {
     const logged = isLogged();
     const data = getUser();
+    const { avatar } = data;
     const backgroundStyle = {
         backgroundImage: `url(https://images.pexels.com/photos/912413/pexels-photo-912413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
     }
     const imageStyle = {
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${avatar})`,
     }
 
     return (
