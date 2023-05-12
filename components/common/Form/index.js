@@ -157,28 +157,3 @@ export default function Form() {
   )
 }
 
-/*
-  <TextField
-              {...field}
-              variant="standard" 
-              name="password"
-              label="Password"
-              type={showPassword ? 'text' : 'password'}
-              id="password"
-              inputProps={{
-                style: {
-                  fontSize: "1.5rem",
-                },
-              endAdornment:(
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-              }}
-            />} */

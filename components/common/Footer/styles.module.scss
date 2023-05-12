@@ -43,11 +43,20 @@
     display: flex;
     justify-content:space-evenly;
 }
+.logo__item {
+    filter: grayscale(90%);
+}
 
+.logo__item:hover {
+    filter: none;
+}
 @media (max-width: 700px) {
     .container {
         padding: 1.5em;
         flex-direction: column;
         gap: 3em;
+    }
+    .logo__item {
+        filter: none;
     }
 }
