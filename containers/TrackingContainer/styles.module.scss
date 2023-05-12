@@ -1,0 +1,95 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+    background-color: #e3edf7;
+}
+
+.container {
+    max-width: 500px;
+    min-width: 250px;
+}
+.tab {
+    display: flex;
+    max-width: 400px;
+    position: relative;
+}
+
+.tab__item {
+    padding: 0.3em 1em;
+    text-align: center;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1.3rem;
+    display: flex;
+    gap: 3px;
+    font-weight: 500;
+}
+
+.tab__item:hover {
+    opacity: 1;
+    background-color: rgba(25, 39, 238, 0.05) ;
+    border-color: rgba(250, 173, 19, 0.1);
+}
+
+.line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: $primary-orange;
+    transition: all 0.2s ease;
+}
+
+.divider {
+    width: 70%;
+    height: 0;
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 50px auto 10px auto;
+}
+.rate {
+    display: flex;
+    justify-content: space-around;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+.head {
+    width: 10ch;
+    font-weight: 500;
+    text-align: center;
+}
+.num {
+    font-family: 'Chivo Mono', monospace;
+    text-align: center;
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+
+.medal {
+    margin: 1.5em auto;
+}
+
+.medal__heading {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.medal__item {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: $color-white;
+    border-radius: 5px;
+}

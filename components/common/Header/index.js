@@ -48,7 +48,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
     <div className={`w-screen py-3 px-1.5 fixed top-0 z-30 ${transparent}`}>
         <div className='flex justify-between mx-auto w-4/5 items-center op'>
             <Link href='/'>
-              <a><Image src='/imgs/logo.png' width={45} height={45} alt='logo' priority></Image></a>
+              <a><Image src='/imgs/logo.png' width={50} height={50} alt='logo' priority></Image></a>
             </Link>
             {/*<button onClick={handleToggle} className='sm:hidden'><Image src={display ? '/imgs/icons/close.svg' : '/imgs/icons/menu.svg'} width={25} height={25} alt='toggle'></Image></button>*/}
             { logged ?
@@ -75,22 +75,22 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
           >
             <div className={styles['popover']}>
               <Link href="/user/profile">
-                <div className={styles['popover__item']}>
+                <a className={styles['popover__item']}>
                 <AccountCircleOutlinedIcon
                 fontSize="large" 
                 sx={{ color: "black"}}
                 />
                 Profile
-                </div>
+                </a>
               </Link>
               <Link href="/user/tracking">
-                <div className={styles['popover__item']}>
+                <a className={styles['popover__item']}>
                   <EventAvailableOutlinedIcon
                   fontSize="large" 
                   sx={{ color: "black"}}
                   />
                   Điểm danh
-                  </div>
+                  </a>
               </Link>
               <button className={styles['btn']} onClick={handleSignOut}>
                 Đăng xuất
@@ -100,7 +100,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
           </Popover>
           </>
             : 
-            <Link href='/login'><div className='rounded-3xl py-3 px-8 text-white bg-primary-blue font-medium cursor-pointer hover:shadow-md'>Đăng nhập</div></Link>
+            <Link href='/login'><a className='rounded-3xl py-4 px-10 text-white bg-primary-blue font-bold text-2xl cursor-pointer hover:shadow-md'>Đăng nhập</a></Link>
             }
         </div>
     </div>
