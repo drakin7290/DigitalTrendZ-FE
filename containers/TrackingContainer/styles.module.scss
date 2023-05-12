@@ -83,4 +83,13 @@
 
 .medal__heading {
     font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.medal__item {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: $color-white;
+    border-radius: 5px;
 }
