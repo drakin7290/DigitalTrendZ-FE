@@ -3,18 +3,25 @@ import styles from "./styles.module.scss"
 import DailyCheck from "~/components/base/DailyCheck";
 import CirclarProcess from "~/components/base/CirclarProcess";
 import Image from "next/image";
+import isLogged from "~/utils/isLogged";
+import countContinuousDay from "~/utils/countContinuousDay";
 
 
 export default function TrackingContainer() {
-    const data = ["1/4/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023","5/5/2023"];
+    const data = ["02/04/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","09/05/2023","10/05/2023","11/05/2023","12/05/2023"];
     const [dateArray, setDateArray] = useState(data ?? []);
     
+    const logged = isLogged();
+
     const numOfDay = dateArray.length > 10 
                     ? dateArray.length 
-                    : `0${dateArray.length}`
-    
+                    : `0${dateArray.length}`;
+
+    const numOfContinuousDay = countContinuousDay(dateArray);
+
     return (
         <main className={`${styles['main']}`}>
+            {logged &&
             <div className={styles['container']}>
                     <CirclarProcess numOfDay={dateArray.length}> 
                     <DailyCheck data={[dateArray, setDateArray]}/>
@@ -27,18 +34,19 @@ export default function TrackingContainer() {
                         </div>
                         <div className={styles['col']}>
                             <div className={styles['head']}>Giữ 🔥 liên tục</div>
-                            <div className={styles['num']}>03</div>
+                            <div className={styles['num']}>{numOfContinuousDay}</div>
                         </div>
                     </div>
                     <div className={styles['medal']}>
                         <div className={styles['medal__heading']}>Huy hiệu nhận được</div>
                         <div className={styles['medal__container']}>
                             <div className={styles['medal__item']}>
-                                <Image src="/imgs/medal/gold.png" width={50} height={50} alt="gold" layout="fill"/>
+                                <Image src="/imgs/medal/gold.png" alt="gold" layout="fill"/>
                             </div>
                         </div>
                     </div>
             </div>
+            }
         </main>
     )
 }

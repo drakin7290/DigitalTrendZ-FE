@@ -6,8 +6,8 @@ import TheBlob from "~/components/common/TheBlob";
 
 
 
-
 function HomeContainer() {
+  
   return (
   <div className={styles['main']}>
     <section className={styles['hero-section']} >

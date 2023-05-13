@@ -31,11 +31,16 @@ export default function Header() {
   const direction = useScrollDirection();
   const data_user = getUser();
   const logged = isLogged ();
+  // const data_user = {
+  //     name: "Nguyễn Văn A",
+  //     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1lbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  // }
+  // const logged = true;
 
   
 const handleSignOut = () => {
   signOut();
-  window.location.reload ();
+  window.location.reload();
   // mutate ({}, {
   //   onSuccess (data) {
   //     console.log(data)
@@ -92,6 +97,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
                   Điểm danh
                   </a>
               </Link>
+              <div className={styles['divider']}></div>
               <button className={styles['btn']} onClick={handleSignOut}>
                 Đăng xuất
                 <LogoutIcon />

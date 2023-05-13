@@ -9,7 +9,7 @@ import TrackingContainer from '~/containers/TrackingContainer';
 
 export default function HomePage() {
   const logged = isLogged();
-
+  
 
 
   return (

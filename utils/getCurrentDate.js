@@ -3,9 +3,16 @@ import dayjs from "dayjs";
 
 export default function getCurrentDate() {
     const now = dayjs();
-    const day = now.get("D");
-    const month = now.get("M")+1;
-    const year = now.get("y")
+    var day = now.get("D");
+    if(day < 10) {
+        day = "0" + day;
+    }
+    var month = now.get("M")+1;
+    if(month < 10) {
+        month = "0" + month;
+    }
+    const year = now.get("y");
+
     const result = `${day}/${month}/${year}`;
     return result
 } 
