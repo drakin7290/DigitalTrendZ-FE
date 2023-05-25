@@ -37,15 +37,21 @@
 }
 .text {
   color: $color-black;
-  max-width: 20ch;
+  max-width: 30ch;
   font-size: 2rem;
+  font-weight: 500;
 }
 
 .button {
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 0.5em 1.5em;
   margin-top: 20px;
 }
+
+.iframe-container {
+  width: 400px;
+}
+ 
 
 @media (max-width: 1000px) {
   .hero-section__containner {

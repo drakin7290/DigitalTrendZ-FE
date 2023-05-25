@@ -5,7 +5,7 @@ import UserContainer from '~/containers/UserContainer';
 import LoadingContainer from '~/containers/LoadingContainer';
 import { useEffect, useState } from 'react';
 import isLogged from '~/utils/isLogged';
-import TrackingContainer from '~/containers/TrackingContainer';
+
 
 export default function HomePage() {
   const logged = isLogged();
@@ -14,10 +14,9 @@ export default function HomePage() {
 
   return (
     <MainLayout>
-        {logged ?
-        <UserContainer />
-        :
-        <HomeContainer />
+        {logged 
+         ? <UserContainer />
+         : <HomeContainer />
         }
     </MainLayout>
   );

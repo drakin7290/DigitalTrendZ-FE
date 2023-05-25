@@ -13,7 +13,8 @@ export default function TrackingContainer() {
         return data ?? [];
     });
 
-    const logged = isLogged();
+    //const logged = isLogged();
+    const logged = true;
     
 
     const numOfDay = dateArray.length > 10 
