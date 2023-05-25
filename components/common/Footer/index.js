@@ -7,8 +7,9 @@ export default function Footer() {
   <footer className={styles['footer']}>
     <div className={styles['container']}>
       <ul className={styles['link-list']}>
-        <li className={styles['link-item']}><Link href="/about">Giới thiệu</Link></li>
-        <li className={styles['link-item']}><Link href="#">Quy định chung</Link></li>
+        <li className={styles['link-item']}><Link href="/about"><a>Giới thiệu</a></Link></li>
+        <li className={styles['link-item']}><Link href="#"><a>Quy định chung</a></Link></li>
+        <li className={styles['link-item']}><Link href="#"><a>Liên hệ</a></Link></li>
       </ul>
 
       <div className={styles['don-vi-truc-thuoc']}>
