@@ -14,7 +14,7 @@ export default function Footer() {
 
       <div className={styles['don-vi-truc-thuoc']}>
         <div className={styles['dvtt__heading']}>
-          ĐƠN VỊ TRỰC THUỘC
+          THÔNG TIN ĐƠN VỊ
         </div>
         <div className={styles['logo']}>
           <div className={styles['logo__item']}><Image src='/imgs/logo/agu_logo.png' width={36} height={36} alt="agu"/></div>
