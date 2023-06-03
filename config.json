@@ -1,5 +1,5 @@
 {
   "PRODUCTION_VERSION": "Ver Local",
-  "SERVER_URI": "http://localhost:8000/api/v1",
-  "WEB_URI": "http://nftbuzz.abc"
+  "SERVER_URI": "https://digitaltrendz.online/api/v1",
+  "WEB_URI": "https://digital-trend-z-fe.vercel.app/"
 }
