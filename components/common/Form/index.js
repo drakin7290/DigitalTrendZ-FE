@@ -93,7 +93,7 @@ export default function Form() {
         authorize ||
         <p className={styles['error-text']}>⚠ Tên tài khoản hoặc mật khẩu sai ⚠</p>
       }
-      <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles['form']} onFocus={() => setAuthorize(true)}>
         <Controller
           name="student_id"
           control={control}
@@ -148,7 +148,7 @@ export default function Form() {
           }
         />
         {/* <input type="submit" value="Let's go" className={styles['btn']} /> */}
-        <LoadingButton loading={loading} loadingPosition="end" className={clsx(styles['btn'], {
+        <LoadingButton type="submit" loading={loading} loadingPosition="end" className={clsx(styles['btn'], {
           [styles['loading']]: loading,
         })} onClick={handleSubmit(onSubmit)}>Let's go</LoadingButton>
       </form>

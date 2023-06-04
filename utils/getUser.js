@@ -7,8 +7,7 @@ import { USER_AUTH } from "~/context/defaultConst";
 export default function getUser() {
     const data = getCookie(USER_AUTH.JSON);
     const result = data ? JSON.parse(data) : {};
-
-    result.avatar = result?.avatar || '/imgs/logo.png';
+    result.avatar = result.avatar ? `https://digitaltrendz.online/storage/${result.avatar}` : '/imgs/logo.png';
 
     return result
 

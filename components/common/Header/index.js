@@ -40,7 +40,8 @@ export default function Header() {
   
 const handleSignOut = () => {
   signOut();
-  window.location.reload();
+  router.push("/");
+  //window.location.reload();
   // mutate ({}, {
   //   onSuccess (data) {
   //     console.log(data)
@@ -51,7 +52,7 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
   return (
   <header>
     <div className={`w-screen py-3 px-1.5 fixed top-0 z-30 ${transparent}`}>
-        <div className='flex justify-between mx-auto w-4/5 items-center op'>
+        <div className='flex justify-between mx-auto w-4/5 items-center'>
             <Link href='/'>
               <a><Image src='/imgs/logo.png' width={50} height={50} alt='logo' priority></Image></a>
             </Link>

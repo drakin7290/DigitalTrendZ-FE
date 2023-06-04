@@ -1,12 +1,19 @@
+import getUser from "~/utils/getUser"
 import styles from "./styles.module.scss"
-import ComputersCanvas from "~/components/3DModel/Computers"
 
 export default function UserContainer() {
+const userName = getUser().name;
+
+const getFirstName = (name) => {
+    const nameArray = name.split(" ");
+    return `${nameArray[0]} ${nameArray[nameArray.length-1]}`
+}
+const firstName = getFirstName(userName);
+
 return (
     <main className={styles['main']}>
-        <div className={styles['heading']}>Chào mừng bạn đến với Digital TrendZ</div>
+        <div className={styles['heading']}>Chào bạn {firstName}</div>
         <div className={styles['computer-container']}>
-            <ComputersCanvas />
         </div>
     </main>
 )
