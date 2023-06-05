@@ -15,8 +15,8 @@ export default function HomePage() {
   return (
     <MainLayout>
         {logged 
-         ? <UserContainer />
-         : <HomeContainer />
+        ? <UserContainer />
+        : <HomeContainer /> 
         }
     </MainLayout>
   );
