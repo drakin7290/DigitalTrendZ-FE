@@ -3,18 +3,30 @@ import styles from "./styles.module.scss"
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import getCurrentDate from "~/utils/getCurrentDate";
+import postAttendance from "~/utils/fetchApi/postAttendance";
+import { toast } from "react-toastify";
+
 
 export default function DailyCheck({data}) {
     const [dateArray, setDateArray] = data;
     const lastDay = dateArray[dateArray.length-1];
     const [todayCheck, setTodayCheck] = useState(lastDay == getCurrentDate());
     
-    const handlCheck = () => {
-        let date = [].concat(dateArray);
-        date.push(getCurrentDate());
-        setDateArray(date);
-        setTodayCheck(true);
+    async function handlCheck() {
+        try {
+            const data = await postAttendance();
+            if(!data.error) {
+                toast.success(data.data, {autoClose: 2000});
+                setTodayCheck(true);
+                setDateArray(["0"]);
+            }
+        } catch (error) {
+            toast.error("Co loi xay ra >_<", {autoClose: 5000});
+            console.log(error);
+        }
     }
+
+    
 
     const transformStyle = {
         transform: "rotateY(180deg)",

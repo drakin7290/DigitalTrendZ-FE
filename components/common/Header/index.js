@@ -30,7 +30,7 @@ export default function Header() {
 
   const direction = useScrollDirection();
   const data_user = getUser();
-  const logged = isLogged ();
+  const logged = isLogged();
   // const data_user = {
   //     name: "Nguyễn Văn A",
   //     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1lbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"

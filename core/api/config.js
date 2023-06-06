@@ -9,6 +9,8 @@ export const API = {
   },
   USER: {
     ATTENDANCE: '/customer/attendance',
+    LIST_ATTENDANCE: '/customer/list_attendance',
+    STREAK: '/customer/streak',
   }
 
   // POST: {

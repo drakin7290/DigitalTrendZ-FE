@@ -5,13 +5,14 @@ import CirclarProcess from "~/components/base/CirclarProcess";
 import Image from "next/image";
 import isLogged from "~/utils/isLogged";
 import countContinuousDay from "~/utils/countContinuousDay";
+import { useEffect } from "react";
+import getListAttendance from "~/utils/fetchApi/getListAttendance";
+import getStreak from "~/utils/fetchApi/getStreak";
 
 
 export default function TrackingContainer() {
-    const [dateArray, setDateArray] = useState(() => {
-        const data = ["02/04/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","04/05/2023","09/05/2023","10/05/2023","11/05/2023","12/05/2023","13/05/2023","14/05/2023"];
-        return data ?? [];
-    });
+    const [dateArray, setDateArray] = useState([]);
+    const [streak, setStreak] = useState(0);
 
     const logged = isLogged();
 
@@ -19,8 +20,32 @@ export default function TrackingContainer() {
                     ? dateArray.length 
                     : `0${dateArray.length}`;
 
-    const numOfContinuousDay = countContinuousDay(dateArray);
+    
 
+    useEffect(() => {
+        async function getList() {
+            try {
+                const  data = await getListAttendance();
+                if(!data.error) {
+                    setDateArray(data.data);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        async function getStreakPoint() {
+            try {
+                const data = await getStreak();
+                if(!data.error) {
+                    setStreak(data.streak);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getList();
+        getStreakPoint();
+    },[dateArray])
     return (
         <main className={`${styles['main']}`}>
             {logged &&
@@ -36,15 +61,12 @@ export default function TrackingContainer() {
                         </div>
                         <div className={styles['col']}>
                             <div className={styles['head']}>Giữ 🔥 liên tục</div>
-                            <div className={styles['num']}>{numOfContinuousDay}</div>
+                            <div className={styles['num']}>{streak}</div>
                         </div>
                     </div>
                     <div className={styles['medal']}>
                         <div className={styles['medal__heading']}>Huy hiệu nhận được</div>
                         <div className={styles['medal__container']}>
-                            <div className={styles['medal__item']}>
-                                <Image src="/imgs/medal/gold.png" alt="gold" layout="fill"/>
-                            </div>
                         </div>
                     </div>
             </div>

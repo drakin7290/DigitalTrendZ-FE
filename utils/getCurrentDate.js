@@ -13,6 +13,6 @@ export default function getCurrentDate() {
     }
     const year = now.get("y");
 
-    const result = `${day}/${month}/${year}`;
+    const result = `${year}-${month}-${day}`;
     return result
 } 
