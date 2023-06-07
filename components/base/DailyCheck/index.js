@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./styles.module.scss"
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
@@ -10,8 +10,14 @@ import { toast } from "react-toastify";
 export default function DailyCheck({data}) {
     const [dateArray, setDateArray] = data;
     const lastDay = dateArray[dateArray.length-1];
-    const [todayCheck, setTodayCheck] = useState(lastDay == getCurrentDate());
-    
+    const [todayCheck, setTodayCheck] = useState(false);
+
+
+    useEffect(() => {
+        if(lastDay == getCurrentDate()) {
+            setTodayCheck(true);
+        }
+    },[dateArray])
     async function handlCheck() {
         try {
             const data = await postAttendance();
@@ -19,9 +25,11 @@ export default function DailyCheck({data}) {
                 toast.success(data.data, {autoClose: 2000});
                 setTodayCheck(true);
                 setDateArray(["0"]);
+            } else {
+                console.log(todayCheck);
             }
         } catch (error) {
-            toast.error("Co loi xay ra >_<", {autoClose: 5000});
+            toast.error("Co loi xay ra >_<", {autoClose: 2000});
             console.log(error);
         }
     }
