@@ -2,17 +2,17 @@ import { useState } from "react"
 import styles from "./styles.module.scss"
 import DailyCheck from "~/components/base/DailyCheck";
 import CirclarProcess from "~/components/base/CirclarProcess";
-import Image from "next/image";
 import isLogged from "~/utils/isLogged";
-import countContinuousDay from "~/utils/countContinuousDay";
 import { useEffect } from "react";
 import getListAttendance from "~/utils/fetchApi/getListAttendance";
 import getStreak from "~/utils/fetchApi/getStreak";
+import getCurrentDate from "~/utils/getCurrentDate";
 
 
 export default function TrackingContainer() {
-    const [dateArray, setDateArray] = useState([]);
-    const [streak, setStreak] = useState(0);
+    const [data, setData] = useState({dateArray: [], streak: 0});
+    const [todayCheck, setTodayCheck] = useState(false);
+    const {dateArray, streak} = data;
 
     const logged = isLogged();
 
@@ -27,7 +27,7 @@ export default function TrackingContainer() {
             try {
                 const  data = await getListAttendance();
                 if(!data.error) {
-                    setDateArray(data.data);
+                    return data.data;
                 }
             } catch (error) {
                 console.log(error);
@@ -37,21 +37,33 @@ export default function TrackingContainer() {
             try {
                 const data = await getStreak();
                 if(!data.error) {
-                    setStreak(data.streak);
+                return data.streak
                 }
             } catch (error) {
                 console.log(error);
             }
         }
-        getList();
-        getStreakPoint();
-    },[dateArray])
+        async function getDataApi() {
+            const dateArray = await getList();
+            const streak = await getStreakPoint();
+            const lastDay = dateArray[dateArray.length-1];
+            const currentDate = getCurrentDate();
+            setData({...data, dateArray: dateArray, streak: streak});
+            setTodayCheck(lastDay == currentDate);
+        }
+        if(!todayCheck) {
+            getDataApi();
+        }
+
+    },[todayCheck]);
+
+
     return (
         <main className={`${styles['main']}`}>
             {logged &&
             <div className={styles['container']}>
                     <CirclarProcess numOfDay={dateArray.length}> 
-                    <DailyCheck data={[dateArray, setDateArray]}/>
+                        <DailyCheck data={[todayCheck, setTodayCheck]}/>
                     </CirclarProcess>
                     <div className={styles['divider']}></div>
                     <div className={styles['rate']}>

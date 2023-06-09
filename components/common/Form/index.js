@@ -38,19 +38,6 @@ export default function Form() {
     event.preventDefault();
   };
 
-  // async function onSubmit(data) {
-  //     const status = await signIn("credentials",{
-  //       redirect: false,
-  //       user_name: data.user_name,
-  //       password: data.password,
-  //       callbackUrl: "/",
-  //     });
-  //     if(status.ok) {
-  //         router.push(status.url);
-  //     }
-
-  //   }
-
   function store_cookie(data) {
     setCookie(USER_AUTH.TOKEN, data.access_token);
     setCookie(USER_AUTH.JSON, JSON.stringify(data.user));
@@ -67,23 +54,15 @@ export default function Form() {
         }
         setAuthorize(true);
         store_cookie(data.data);
-        // console.log(data)
         router.push("/");
-        toast.success("Login successfully")
+        toast.success("Login successfully",{autoClose: 3000});
       },
       onError(data) {
         setLoading(false);
-        toast.error("Connect fail to server");
+        toast.error("Connect fail to server",{autoClose: 3000});
         console.log(data)
       }
     })
-    // if(status == true) {
-    //   setAuthorize(true);
-    //   router.push("/");
-    // } else {
-    //   setAuthorize(false);
-    // }
-
   }
 
   return (
