@@ -19,10 +19,12 @@
     padding: 0.5em;
     cursor: pointer;
     border-radius: 5px;
+    color: black;
 }
 
 .popover__item:hover {
     background-color: $primary-blue;
+    color: white;
 }
 
 .divider {

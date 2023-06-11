@@ -51,10 +51,8 @@ export default function TrackingContainer() {
             setData({...data, dateArray: dateArray, streak: streak});
             setTodayCheck(lastDay == currentDate);
         }
-        if(!todayCheck) {
-            getDataApi();
-        }
-
+        
+        getDataApi();
     },[todayCheck]);
 
 

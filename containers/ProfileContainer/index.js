@@ -1,12 +1,15 @@
 import isLogged from "~/utils/isLogged";
 import styles from "./styles.module.scss";
 import getUser from "~/utils/getUser";
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import InformationSection from "./InformationSection";
 import { useState, useRef } from "react";
+//icons
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+
 
 export default function ProfileContainer() {
-    const [tab, setTab] = useState("0");
+const [tab, setTab] = useState("0");
 
     const logged = isLogged();
     const data = useRef({...getUser()});
@@ -22,10 +25,7 @@ export default function ProfileContainer() {
     const imageStyle = {
         backgroundImage: `url(${data.current.avatar})`,
     }
-    const activeTabStyle = {
-        backgroundColor: '#1364FB',
-        color: 'white',
-    };
+    
 
     return (
         <main className={styles['main']}>
@@ -39,11 +39,11 @@ export default function ProfileContainer() {
                     </div>
                     <div className={styles['content']}>
                         <div className={styles['tab']}> 
-                            <div className={styles['tab__item']} id="0" onClick={(e) => handleChangeTab(e)} style={tab == "0" ? activeTabStyle : {}} >
-                                <PermIdentityIcon 
-                                    fontSize="large"
-                                />
-                                <p>Thông tin cá nhân</p>
+                            <div className={`${styles['tab__item']} ${tab == "0" ? styles['--active'] : ""}`} id="0" onClick={(e) => handleChangeTab(e)} >
+                                <div className={styles['tab__icon']} >
+                                    <PermIdentityIcon fontSize="large"/>
+                                </div>
+                                <p>Thông tin</p>
                             </div>
                         </div>
                         { tab == "0" ?

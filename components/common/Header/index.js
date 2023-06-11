@@ -84,7 +84,6 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
                 <a className={styles['popover__item']}>
                 <AccountCircleOutlinedIcon
                 fontSize="large" 
-                sx={{ color: "black"}}
                 />
                 Profile
                 </a>
@@ -93,7 +92,6 @@ const transparent = direction == "top" ? "bg-transparent" : "bg-white shadow-md"
                 <a className={styles['popover__item']}>
                   <EventAvailableOutlinedIcon
                   fontSize="large" 
-                  sx={{ color: "black"}}
                   />
                   Điểm danh
                   </a>
