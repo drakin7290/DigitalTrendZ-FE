@@ -129,7 +129,7 @@ export default function Form() {
         {/* <input type="submit" value="Let's go" className={styles['btn']} /> */}
         <LoadingButton type="submit" loading={loading} loadingPosition="end" className={clsx(styles['btn'], {
           [styles['loading']]: loading,
-        })} onClick={handleSubmit(onSubmit)}>Let's go</LoadingButton>
+        })} onClick={handleSubmit(onSubmit)}>Let&apos;s go</LoadingButton>
       </form>
       <a href={"/forgotpassword"} className={styles['forgot-pass']}>Quên mật khẩu?</a>
     </div>

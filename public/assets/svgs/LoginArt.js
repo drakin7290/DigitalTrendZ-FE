@@ -1,6 +1,8 @@
 import * as React from "react";
 const SvgLoginArt = ({ title, titleId, ...props }) => (
   <svg
+    width="20px"
+    height="20px"
     viewBox="0 0 586 516"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

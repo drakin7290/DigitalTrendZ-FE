@@ -5,6 +5,7 @@
     background-color: #000229;
 }
 
+
 .footer__copyright {
     width: 100%;
     opacity: 60%;
@@ -29,7 +30,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    text-decoration: underline;
+    font-size: 1.5rem;
+    color: rgba(255,255,255, 0.8);
 }
 
 .don-vi-truc-thuoc {
@@ -37,10 +39,12 @@
     flex-direction: column;
     align-items: center;
     gap: 0.6em;
+    color: rgba(255,255,255,0.7);
 }
 .logo {
     width: 100%;
     display: flex;
+    gap: 1em;
     justify-content:space-evenly;
 }
 .logo__item {

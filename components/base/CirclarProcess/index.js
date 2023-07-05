@@ -21,11 +21,11 @@ export default function CirclarProcess({numOfDay, children}) {
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150px" height="150px" className={styles['svg']}>
                 <defs>
                     <linearGradient id="GradientColor">
-                    <stop offset="0%" stop-color="#FBBC4B" />
-                    <stop offset="100%" stop-color="#1364FB" />
+                    <stop offset="0%" stopColor="#FBBC4B" />
+                    <stop offset="100%" stopColor="#1364FB" />
                     </linearGradient>
                 </defs>
-                <circle className={styles['circle']} cx="75" cy="75" r="65" stroke-linecap="round" style={circleStyle} />
+                <circle className={styles['circle']} cx="75" cy="75" r="65" strokeLinecap="round" style={circleStyle} />
                 </svg>
                 {children}
             </div>

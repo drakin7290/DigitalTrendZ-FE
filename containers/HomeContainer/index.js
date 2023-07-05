@@ -9,7 +9,7 @@ import FacebookIframe from "~/components/common/FacebookIframe";
 function HomeContainer() {
   
   return (
-  <div className={styles['main']}>
+  <main className={styles['main']}>
     <section className={styles['hero-section']} >
     <div className={styles['hero-section__containner']}>
       <div className=" flex flex-col">
@@ -33,7 +33,7 @@ function HomeContainer() {
       </div>
       <FacebookIframe />
     </section>
-  </div>
+  </main>
   )
 }
 

@@ -17,8 +17,8 @@ export default function Footer() {
           THÔNG TIN ĐƠN VỊ
         </div>
         <div className={styles['logo']}>
-          <a href="https://www.agu.edu.vn/" target="_blank"><div className={styles['logo__item']}><Image src='/imgs/logo/agu_logo.png' width={36} height={36} alt="agu"/></div></a>
-          <a href="https://www.facebook.com/vsaAGU/" target="_blank"><div className={styles['logo__item']}><Image src='/imgs/logo/hsv_logo.png' width={36} height={36} alt="hsv"/></div></a>
+          <a href="https://www.agu.edu.vn/" target="_blank" rel="noreferrer"><div className={styles['logo__item']}><Image src='/imgs/logo/agu_logo.png' width={36} height={36} alt="agu"/></div></a>
+          <a href="https://www.facebook.com/vsaAGU/" target="_blank" rel="noreferrer"><div className={styles['logo__item']}><Image src='/imgs/logo/hsv_logo.png' width={36} height={36} alt="hsv"/></div></a>
           <a href="#"><div className={styles['logo__item']}><Image src='/imgs/logo.png' width={36} height={36} alt="logo"/></div></a>
         </div>
       </div>

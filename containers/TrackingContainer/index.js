@@ -16,9 +16,7 @@ export default function TrackingContainer() {
 
     const logged = isLogged();
 
-    const numOfDay = dateArray.length > 10 
-                    ? dateArray.length 
-                    : `0${dateArray.length}`;
+    const numOfDay = dateArray.length >= 10 ? dateArray.length : `0${dateArray.length}`;
 
     
 

@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Blob1 } from "~/public/assets/svgs";
+import SvgBlob1 from "./Blob1";
 import styles from "./styles.module.scss";
 import KUTE from "kute.js"
 
@@ -16,7 +16,7 @@ export default function TheBlob() {
 
     return (
         <>
-            <Blob1 className={styles['theblob']}/>
+            <SvgBlob1 className={styles['theblob']}/>
         </>
     )
 }
