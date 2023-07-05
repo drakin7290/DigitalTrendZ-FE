@@ -2,11 +2,11 @@ import styles from "./styles.module.scss"
 import Image from "next/image"
 
 
-export default function Contact({contact}) {
-    const backgroundStyle = contact.background 
+export default function Contact({style, name, background, imgUrl, zalo}) {
+    const backgroundStyle = background 
     ? 
         {
-            background: `url(${contact.background})`,
+            background: `url(${background})`,
         }
     : 
         {
@@ -14,17 +14,17 @@ export default function Contact({contact}) {
         }
 
     return (
-        <div className={styles["contact"]}>
+        <div className={styles["contact"]} style={style}>
             <div className={styles['background']} style={backgroundStyle}>
-                <img src={contact.imgUrl} className={styles['img']} />
+                <img src={imgUrl} className={styles['img']} />
             </div>
-            <p className={styles['name']}>{contact.name}</p>
+            <p className={styles['name']}>{name}</p>
 
             <div className={styles['list-contact']} >
             {
-                contact.zalo &&
-                <a target="_blank" href={contact.zalo}>
-                        <Image src="/imgs/logo/zalo_logo.png" width={30} height={30} />
+                zalo &&
+                <a target="_blank" href={zalo} rel="noreferrer">
+                        <Image src="/imgs/logo/zalo_logo.png" width={30} height={30} alt=""/>
                 </a>
             }
             </div>

@@ -13,7 +13,7 @@ const SvgCalendar = ({ title, titleId, ...props }) => (
     {title ? <title id={titleId}>{title}</title> : null}
     <g
       clipPath="url(#calendar_svg__a)"
-      stroke={"#fff"}
+      stroke={"currentColor"}
       strokeWidth={1.5}
       strokeMiterlimit={10}
     >

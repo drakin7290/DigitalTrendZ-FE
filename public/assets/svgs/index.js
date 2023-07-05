@@ -1,5 +1,5 @@
 export { default as ArrowLeft } from "./ArrowLeft";
-export { default as Blob1 } from "../../../components/common/TheBlob/Blob1";
+export { default as Blob1 } from "./Blob1";
 export { default as Blob2 } from "./Blob2";
 export { default as Calendar } from "./Calendar";
 export { default as Clock } from "./Clock";
@@ -11,6 +11,9 @@ export { default as EyeClose } from "./EyeClose";
 export { default as EyeOpen } from "./EyeOpen";
 export { default as Gift } from "./Gift";
 export { default as Home } from "./Home";
+export { default as IconFacebook } from "./IconFacebook";
+export { default as IconInstagram } from "./IconInstagram";
+export { default as IconMessenger } from "./IconMessenger";
 export { default as LoginArt } from "./LoginArt";
 export { default as Logout } from "./Logout";
 export { default as Menu } from "./Menu";

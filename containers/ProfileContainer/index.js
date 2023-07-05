@@ -2,17 +2,16 @@ import isLogged from "~/utils/isLogged";
 import styles from "./styles.module.scss";
 import getUser from "~/utils/getUser";
 import InformationSection from "./InformationSection";
-import { useState, useRef } from "react";
+import { useState, useMemo } from "react";
 //icons
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 
 export default function ProfileContainer() {
 const [tab, setTab] = useState("0");
 
     const logged = isLogged();
-    const data = useRef({...getUser()});
+    const data = useMemo({...getUser()});
     
     function handleChangeTab(e) {
         console.log(e.currentTarget.id);

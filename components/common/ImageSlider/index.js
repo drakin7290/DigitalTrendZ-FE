@@ -2,11 +2,8 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import Container from "~/components/base/Container";
 import BannerItem from "./BannerItem";
-import Image from "next/image";
-import { Calendar } from "~/public/assets/svgs";
+
 
 
 
