@@ -11,7 +11,7 @@ export default function ProfileContainer() {
 const [tab, setTab] = useState("0");
 
     const logged = isLogged();
-    const data = useMemo({...getUser()});
+    const data = useMemo(() => getUser());
     
     function handleChangeTab(e) {
         console.log(e.currentTarget.id);
@@ -22,7 +22,7 @@ const [tab, setTab] = useState("0");
         backgroundImage: `url(https://images.pexels.com/photos/912413/pexels-photo-912413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,
     }
     const imageStyle = {
-        backgroundImage: `url(${data.current.avatar})`,
+        backgroundImage: `url(${data.avatar})`,
     }
     
 
@@ -34,7 +34,7 @@ const [tab, setTab] = useState("0");
                         <div className={styles['img']} style={imageStyle}></div>
                     </div>
                     <div className={styles['name-container']}>
-                        <p className={styles['name']}>{data.current.name}</p>
+                        <p className={styles['name']}>{data.name}</p>
                     </div>
                     <div className={styles['content']}>
                         <div className={styles['tab']}> 
@@ -46,7 +46,7 @@ const [tab, setTab] = useState("0");
                             </div>
                         </div>
                         { tab == "0" ?
-                        <InformationSection dataUser={data.current} />
+                        <InformationSection dataUser={data} />
                         : 
                         <div></div>
                         }
