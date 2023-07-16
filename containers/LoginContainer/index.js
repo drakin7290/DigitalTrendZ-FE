@@ -6,7 +6,7 @@ export default function LoginContainer() {
     return (
         <main>
             <div className={styles['img-container']}>
-                <LoginArt className={styles['img']}/>
+                <LoginArt className={styles['img']} width="300px" height="300px"/>
             </div>
             <Form />
         </main>

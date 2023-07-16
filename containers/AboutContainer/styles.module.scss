@@ -7,7 +7,7 @@
 
 .title-box {
     width: 50%;
-    min-width: 400px;
+    min-width: 320px;
     padding: 0.7em;
     margin: 0 auto;
     text-align: center;
@@ -142,9 +142,9 @@
         content: "";
         position: absolute;
         top: 50%;
-        left: -25px;
+        left: -11px;
         transform: translateX(-50%);
-        width: 45px;
+        width: 22px;
         height: 2px;
         background: black;
     }
@@ -156,7 +156,6 @@
 
     .tree-childs__element {
         width: 85%;
-        margin-right: 0;
     }
 
     .tree-childs--single::before {
@@ -164,5 +163,16 @@
         height: 40px;
     }
 
+    .title-box {
+        width: 160px;
+        padding: 0.7em;
+        margin: 0 auto;
+        text-align: center;
+        border: solid 2px black;
+        border-radius: 8px 8px 8px 0;
+        box-shadow: none;
+        font-size: 2rem;
+        font-weight: 600;
+    }
     
 }
