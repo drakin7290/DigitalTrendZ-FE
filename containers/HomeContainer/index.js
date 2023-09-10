@@ -1,12 +1,29 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import styles from "./styles.module.scss"
 import Button from "~/components/base/Button";
 import TheBlob from "~/components/common/TheBlob";
-import FacebookIframe from "~/components/common/FacebookIframe";
-
+const FacebookIframe = dynamic(() => import("~/components/common/FacebookIframe"), {
+  ssr: false,
+})
 
 
 function HomeContainer() {
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY >= 250) {
+        setShown(true);
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   
   return (
   <main className={styles['main']}>
@@ -21,17 +38,16 @@ function HomeContainer() {
                 </svg>
         </Button>
       </div>
-      <div className="relative"><TheBlob /><Image src='/imgs/hero_img.png'  width={350} height={350} priority/></div>
+      <div className="relative"><TheBlob /><Image src='/imgs/hero_img.webp'  width={350} height={350} priority/></div>
     </div>
     </section>
     <section className={styles['explore']} id="explore">
       <div className={styles['explore__img']}>
         <div className="flex flex-col">
-          <Image src={'/imgs/exploring.svg'} width={80} height={80}/>
           <p>TIN NỔI BẬT</p>
         </div>
       </div>
-      <FacebookIframe />
+      {shown && <FacebookIframe />}
     </section>
   </main>
   )

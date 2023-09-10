@@ -21,35 +21,17 @@ export default function TrackingContainer() {
     
 
     useEffect(() => {
-        async function getList() {
-            try {
-                const  data = await getListAttendance();
-                if(!data.error) {
-                    return data.data;
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        async function getStreakPoint() {
-            try {
-                const data = await getStreak();
-                if(!data.error) {
-                return data.streak
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        }
         async function getDataApi() {
-            const dateArray = await getList();
-            const streak = await getStreakPoint();
-            const lastDay = dateArray[dateArray.length-1];
-            const currentDate = getCurrentDate();
-            setData({...data, dateArray: dateArray, streak: streak});
-            setTodayCheck(lastDay == currentDate);
+            try {
+                const [dateArray,streak] = await Promise.all([getListAttendance(), getStreak()]);
+                const lastDay = dateArray[dateArray.length-1];
+                const currentDate = getCurrentDate();
+                setData({...data, dateArray: dateArray, streak: streak});
+                setTodayCheck(lastDay == currentDate);
+            } catch(error) {
+                console.log(error);
+            }
         }
-        
         getDataApi();
     },[todayCheck]);
 

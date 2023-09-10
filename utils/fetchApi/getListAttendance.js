@@ -5,8 +5,15 @@ import axios from "axios";
 
 export default async function getListAttendance() {
     const user_token = getCookie(USER_AUTH.TOKEN);
-    const { data } = await axios.get(API_ROOT + API.USER.LIST_ATTENDANCE, {
-        headers: { Authorization: 'Bearer ' + user_token },
-    });
-    return data;
+    try {
+        const { data } = await axios.get(API_ROOT + API.USER.LIST_ATTENDANCE, {
+            headers: { Authorization: 'Bearer ' + user_token },
+        });
+        
+        if(!data.error) {
+            return data.data;
+        }
+    } catch(error) {
+        console.log(error);
+    }
 }
